@@ -1,0 +1,135 @@
+@charset "UTF-8";
+body{
+	background-size:cover;
+	overflow:-Scroll;
+	overflow-x:hidden;
+}
+a{
+	text-decoration:none;
+}
+*{
+	margin:0;
+	padding:0;
+}
+#picture{
+	margin:50px 10px 0px 30px;
+	width:1350px;
+	height:250px;
+}
+#main{
+	background-color:Khaki;
+	margin:0px 10px 0px 30px;
+	width:1350px;
+	height:1150px;
+}
+#left{
+	position:relative;
+	top:50px;
+	left:5px;
+	width:250px;
+	height:800px;
+}
+#right{
+	position:relative;
+	top:-750px;
+	left:300px;
+	width:1020px;
+	height:950px;
+}
+.button{
+	background-color:Khaki;
+}
+#room1,#room2,#room3,#room4,#room5,#room6,#room7{
+	position:relative;
+	top:0px;
+	left:0px;
+	width:200px;
+	height:100px;
+}
+#room1-1,#room2-1,#room3-1,#room4-1,#room5-1,#room6-1,#room7-1{
+	position:absolute;
+	border:solid 2px;
+	width:1000px;
+	height:200px;
+	top:60px;
+	left:0px;
+	margin:-20px 0px 30px 0px;
+}
+#room1-2,#room2-2,#room3-2,#room4-2,#room5-2,#room6-2,#room7-2{
+	position:absolute;
+	border:solid 2px;
+	width:1000px;
+	height:200px;
+	top:280px;
+	left:0px;
+}
+#room1-3,#room2-3,#room3-3,#room4-3,#room5-3,#room6-3,#room7-3{
+	position:absolute;
+	border:solid 2px;
+	width:1000px;
+	height:200px;
+	top:500px;
+	left:0px;
+	margin:30px 0px 30px 0px;
+}
+#room1-4,#room2-4,#room3-4,#room4-4,#room5-4,#room6-4,#room7-4{
+	position:absolute;
+	border:solid 2px;
+	width:1000px;
+	height:200px;
+	top:720px;
+	left:0px;
+	margin:60px 0px;
+}
+#room1-1-right,#room2-1-right,#room3-1-right,#room4-1-right,#room5-1-right,#room6-1-right,#room7-1-right{
+	position:absolute;
+	width:280px;
+	height:200px;
+	top:0px;
+	left:470px;
+}
+#room1-2-right,#room2-2-right,#room3-2-right,#room4-2-right,#room5-2-right,#room6-2-right,#room7-2-right{
+	position:absolute;
+	width:280px;
+	height:200px;
+	top:0px;
+	left:470px;
+}
+#room1-3-right,#room2-3-right,#room3-3-right,#room4-3-right,#room5-3-right,#room6-3-right,#room7-3-right{
+	position:absolute;
+	width:280px;
+	height:200px;
+	top:0px;
+	left:470px;
+}
+#room1-4-right,#room2-4-right,#room3-4-right,#room4-4-right,#room5-4-right,#room6-4-right,#room7-4-right{
+	position:absolute;
+	width:280px;
+	height:200px;
+	top:0px;
+	left:470px;
+}
+#room1-left,#room2-left,#room3-left,#room4-left{
+	position:relative;
+	top:20px;
+	left:80px;
+	width:150px;
+	height:50px;
+	text-align:center;
+	background-color:gray;
+}
+#room1-right,#room2-right,#room3-right,#room4-right{
+	position:relative;
+	top:-30px;
+	left:230px;
+	width:150px;
+	height:50px;
+}
+#down{
+	text-align:center;
+	position:relative;
+	width:1400px;
+	height:150px;
+	bottom:600px;
+	left:0px;
+}

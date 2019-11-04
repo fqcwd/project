@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 用户表 -->
+	<class name="project_entity.User" table="p_user">
+		<id name="uid">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="usex"></property>
+		<property name="login"></property>
+		<property name="password"></property>
+		<property name="phone"></property>
+		<property name="idCard"></property>
+		<property name="credit"></property>
+		<property name="VIPLevel"></property>
+		<property name="rDate"></property>
+	</class>
+	
+	<!-- 管理员表 -->
+	<class name="project_entity.Admin" table="p_admin">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="login"></property>
+		<property name="password"></property>
+	</class>
+	
+	<!-- 房间表 -->
+	<class name="project_entity.Room" table="p_room">
+		<id name="rid">
+			<generator class="native"></generator>
+		</id>
+		<property name="roomID"></property>
+		<property name="rname"></property>
+		<property name="number"></property>
+		<property name="status"></property>
+		<property name="type"></property>
+		<property name="money"></property>
+		<property name="area"></property>
+		<property name="bedNum"></property>
+	</class>
+	
+	<!-- 订单表 -->
+	<class name="project_entity.Order" table="p_order">
+		<id name="oid">
+			<generator class="native"></generator>
+		</id>
+		<property name="rid"></property>
+		<property name="uname"></property>
+		<property name="idCard"></property>
+		<property name="tel"></property>
+		<property name="sDate"></property>
+		<property name="eDate"></property>
+		<property name="sumMoney"></property>
+	</class>
+	
+	<!-- 入住信息表 -->
+	<class name="project_entity.Live" table="p_live">
+		<id name="lid">
+			<generator class="native"></generator>
+		</id>
+		<property name="rid"></property>
+		<property name="uname"></property>
+		<property name="idCard"></property>
+		<property name="tel"></property>
+		<property name="sDate"></property>
+		<property name="eDate"></property>
+		<property name="sumMoney"></property>
+	</class>
+	
+	<!-- 消费记录表 -->
+	<class name="project_entity.Pay" table="p_pay">
+		<id name="pid">
+			<generator class="native"></generator>
+		</id>
+		<property name="rid"></property>
+		<property name="uname"></property>
+		<property name="idCard"></property>
+		<property name="tel"></property>
+		<property name="sDate"></property>
+		<property name="eDate"></property>
+		<property name="sumMoney"></property>
+	</class>
+	
+</hibernate-mapping>

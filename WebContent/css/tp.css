@@ -1,0 +1,174 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-size: cover;
+	
+}
+
+a{
+	text-decoration:none;
+}
+#Top {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	width: 200px;
+	height: 20px;
+	background-color:white;
+}
+
+#Top-2{
+	position: absolute;
+	left:1050px;
+	top: 25px;
+	width: 410px;
+	height: 20px;
+	font-color:white;
+}
+
+.box {
+	position: absolute;
+	left: 0px;
+	top: -45px;
+	width: 1480px;
+	height: 350px;
+	border: 1px solid #ccc;
+	margin: 100px auto;
+	padding: 5px;
+}
+
+.inner {
+	width: 1480px;
+	height: 350px;
+	position: relative;
+	overflow: hidden;
+}
+
+.inner img {
+	width: 1480px;
+	height: 350px;
+	vertical-align: top;
+}
+
+ul {
+	width: 1000%;
+	position: absolute;
+	list-style: none;
+	left: 0;
+	top: 0;
+}
+
+.inner li {
+	float: left;
+}
+
+ol {
+	position: absolute;
+	height: 20px;
+	right: 20px;
+	bottom: 20px;
+	text-align: center;
+	padding: 5px;
+}
+
+ol li {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	background-color: #fff;
+	margin: 5px;
+	cursor: pointer;
+}
+
+ol .current {
+	background-color: red;
+}
+
+#arr {
+	display: none;
+}
+
+#arr span {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	margin-top: -20px;
+	background: #fff;
+	cursor: pointer;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-family: '黑体';
+	font-size: 30px;
+	color: #000;
+	opacity: 0.5;
+	border: 1px solid #fff;
+}
+
+#arr #right {
+	right: 5px;
+	left: auto;
+}
+#news{
+	position: absolute;
+	height: 300px;
+	width:700px;
+	top:470px;
+	left: 10px;
+	color:black;
+	
+}
+#introduce{
+	position: absolute;
+	height: 300px;
+	width:700px;
+	top:470px;
+	left: 735px;
+	color:black;
+}
+#picture{
+	position: absolute;
+	height:200px;
+	width:300px;
+	top:40px;
+	left: 10px;
+}
+#words1{
+	position: absolute;
+	height: 100px;
+	width:400px;
+	top:50px;
+	left: 320px;
+	color:black;
+}
+#words2{
+	position: absolute;
+	height: 200px;
+	width:700px;
+	top:270px;
+	left: 10px;
+	color:black;
+}
+#show{
+	position: absolute;
+	height: 180px;
+	width:1480px;
+	top:1000px;
+	left: 10px;
+	color:black;
+	
+}
+#down{
+	position: absolute;
+	height: 80px;
+	width:1480px;
+	top:1280px;
+	left: 10px;
+	color:black;
+	text-align:center;
+}

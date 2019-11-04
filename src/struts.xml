@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="admin" extends="struts-default" namespace="/">
+		<!-- VIP注册 -->
+		<action name="vipRegister" class="vip" method="Register">
+			<result name="register">/VIPRegister.jsp</result>
+			<result name="tip">/Tip.jsp</result>
+		</action>
+		<!-- 注销VIP -->
+		<action name="userCancel" class="vip" method="Cancel">
+			<result name="cancel" type="redirect">/userPage.action</result>
+			<result name="error" >/UserInvalid.jsp</result>
+		</action>
+		<!-- 修改用户信息 -->
+		<action name="userUpdate" class="vip" method="Update">
+			<result name="update" type="redirect">/userPage.action</result>
+		</action>
+		<!--分页 查询用户 -->
+		<action name="userPage" class="vip" method="Page">
+			<result name="result">/VIPInfo.jsp</result>
+		</action>
+		<!-- 下拉菜单 -->
+		<action name="menu" class="vip" method="Page2">
+			<result name="cancel">/UserCancel.jsp</result>
+		</action>
+		
+		<!-- 添加房间 -->
+		<action name="roomRegister" class="room" method="Register">
+			<result name="register">/RoomAdd.jsp</result>
+			<result name="tip">/Tip.jsp</result>
+		</action>
+		<!-- 删除房间 -->
+		<action name="roomCancel" class="room" method="Cancel">
+			<result name="cancel" type="redirect">/roomPage.action</result>
+		</action>
+		<!-- 修改房间信息 -->
+		<action name="roomUpdate" class="room" method="Update">
+			<result name="update">/RoomChange.jsp</result>
+		</action>
+		<!-- 分页查询房间 -->
+		<action name="roomPage" class="room" method="Page">
+			<result name="result">/RoomInfo.jsp</result>
+		</action>
+		
+		<!-- 添加订单 -->
+		<action name="orderAdd" class="order" method="Add">
+			<result name="add">/ReserveAdd.jsp</result>
+			<result name="tip2">/Tip2.jsp</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+		<!-- 取消订单 -->
+		<action name="orderCancel" class="order" method="Delete">
+			<result name="delete" type="redirect">/orderPage.action</result>
+			<result name="error">/OrderInvalid.jsp</result>
+		</action>
+		<!-- 分页查询订单 -->
+		<action name="orderPage" class="order" method="Page">
+			<result name="result">/ReserveInfo.jsp</result>
+		</action>
+		
+		<!-- 添加入住信息 -->
+		<action name="liveAdd" class="live" method="Add">
+			<result name="success">/LiveSign.jsp</result>
+			<result name="tip2">/Tip2.jsp</result>
+			<result name="error">/Error.jsp</result>
+			<result name="invalid">/Invalid.jsp</result>
+		</action>
+		<!-- 删除入住信息 -->
+		<action name="liveDelete" class="live" method="Delete">
+			<result name="success" type="redirect">/livePage.action</result>
+		</action>
+		<!-- 通过房间号退房 -->
+		<action name="liveCancel" class="live" method="Cancel">
+			<result name="cancel" type="redirect">/livePage.action</result>
+			<result name="error">/Error.jsp</result>
+		</action>
+		<!-- 分页查询入住信息 -->
+		<action name="livePage" class="live" method="Page">
+			<result name="result">/LiveInfo.jsp</result>
+		</action>
+		
+		<!-- 消费记录显示 -->
+		<action name="payPage" class="live" method="Record">
+			<result name="record">/Money.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="customer" namespace="/" extends="struts-default">
+		<!-- 登录验证用户 -->
+		<action name="LoginAction" class="login" method="Login">
+			<result name="success">/HomePage.jsp</result>
+			<result name="error">/Login.jsp</result>
+		</action>
+		<!-- 登录验证管理员 -->
+		<action name="AdminAction" class="login" method="AdminLogin">
+			<result name="success">/Welcome.jsp</result>
+			<result name="error">/ManagerLogin.jsp</result>
+		</action>
+		<!-- 注册用户 -->
+		<action name="RegisterAction" class="user" method="Register">
+			<result name="register2">/Login2.jsp</result>
+		</action>
+		<!-- 注销用户 -->
+		<action name="Logout" class="login" method="CustomerLoginOut">
+			<result name="cout">/Login.jsp</result>
+		</action>
+		<!-- 注销用户 -->
+		<action name="AdminLogout" class="login" method="AdminLoginOut">
+			<result name="aout">/Login.jsp</result>
+		</action>
+		<!-- 充值服务 -->
+		<action name="Invest" class="invest" method="Invest">
+			<result name="invest">/ShowPerson.jsp</result>
+		</action>
+		<!-- 提交订单 -->
+		<action name="ReserveAction" class="reserve" method="Reserve">
+			<result name="reserve" type="redirectAction">/FindAction.action?idCard=${idCard}</result>
+		</action>
+		<!-- 查询订单 -->
+		<action name="FindAction" class="reserve" method="Find">
+			<result name="find">/ShowReserve.jsp</result>
+		</action>
+		<!-- 取消订单 -->
+		<action name="CancelAction" class="reserve" method="Cancel">
+			<result name="delete">/ShowReserve.jsp</result>
+		</action>
+	</package>
+</struts>
+
+
+

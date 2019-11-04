@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+<!-- Admin -->
+	<!-- 配置action的对象 -->
+	<!-- VIP相关信息和操作 -->
+	<bean id="vip" class="project_action.VipAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- 房间相关信息和操作 -->
+	<bean id="room" class="project_action.RoomAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="roomService" ref="roomService"></property>
+	</bean>
+	
+	<!-- 订单相关信息和操作 -->
+	<bean id="order" class="project_action.OrderAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+	
+	<!-- 入住信息和操作 -->
+	<bean id="live" class="project_action.LiveAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="liveService" ref="liveService"></property>
+	</bean>
+
+	<!-- 创建service对象 -->
+	<!-- 用户Service -->
+	<bean id="userService" class="project_service.UserService">
+		<!-- 注入dao -->
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<!-- 房间Service -->
+	<bean id="roomService" class="project_service.RoomService">
+		<!-- 注入dao -->
+		<property name="roomDao" ref="roomDao"></property>
+	</bean>
+	<!-- 订单Service -->
+	<bean id="orderService" class="project_service.OrderService">
+		<!-- 注入dao -->
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+	<!-- 入住信息Service -->
+	<bean id="liveService" class="project_service.LiveService">
+		<!-- 注入dao -->
+		<property name="liveDao" ref="liveDao"></property>
+	</bean>
+	
+	<!-- 创建Dao -->
+	<!-- 用户Dao -->
+	<bean id="userDao" class="project_dao.UserDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 房间Dao -->
+	<bean id="roomDao" class="project_dao.RoomDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 订单Dao -->
+	<bean id="orderDao" class="project_dao.OrderDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 入住信息Dao -->
+	<bean id="liveDao" class="project_dao.LiveDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+<!-- Customer -->
+	<!-- 配置action的对象 -->
+	<bean id="user" class="Action.RegisterAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="userService" ref="userService2"></property>
+	</bean>
+	<bean id="login" class="Action.LoginAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="userService" ref="userService2"></property>
+	</bean>
+	<bean id="reserve" class="Action.ReserveAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="userService" ref="userService2"></property>
+	</bean>
+	<bean id="invest" class="Action.VIPAction" scope="prototype">
+		<!-- 注入service -->
+		<property name="userService" ref="userService2"></property>
+	</bean>
+	<!-- 创建service对象 -->
+	<bean id="userService2" class="Service.UserService">
+		<!-- 注入dao -->
+		<property name="userDao" ref="userDao"></property>
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+	
+
+<!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
+	<!-- spring与hibernate框架相关的整合 -->
+	<!-- 配置c3p0连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 注入属性值 -->
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql:///SSH_Project?serverTimezone=GMT"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="fqc201314"></property>
+	</bean>
+	
+	<!-- sessionFactory的创建 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 注入dataSource -->
+		<property name="dataSource" ref="dataSource"></property>
+		
+		<!-- 指定使用hibernate核心配置文件 -->
+		<property name="configLocations" value="classPath:hibernate.cfg.xml"></property>
+	</bean>
+	<!-- 创建hibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<!-- 注入sessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<!--注入sessionFactory-->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--开启事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>
+
+
+
+
+
+
+
+
+
+

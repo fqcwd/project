@@ -1,0 +1,66 @@
+@charset "UTF-8";
+body{
+	text-align:center;
+	background-repeat: no-repeat;
+}
+#left{
+	position:absolute;
+	background-color:white;
+	border:solid 1px;
+	width:250px;
+	height:650px;
+	top:20px;
+	left:20px;
+	opacity: 0.7;
+	
+}
+#top-1{
+	position:absolute;
+	width:250px;
+	height:100px;
+	top:0px;
+	left:0px;
+	
+}
+#top-2{
+	position:absolute;
+	width:250px;
+	height:80px;
+	top:100px;
+	left:0px;
+	
+}
+#login{
+	position:absolute;
+	width:250px;
+	height:200px;
+	top:180px;
+	left:0px;
+	
+}
+#Tel{
+	position:absolute;
+	width:250px;
+	height:250px;
+	top:400px;
+	left:0px;
+	
+}
+#top{
+	position:absolute;
+	background-color:black;
+	border:solid 1px;
+	width:600px;
+	height:50px;
+	top:0px;
+	right:0px;
+	opacity: 0.7;
+}
+#center{
+	position:absolute;
+	width:800px;
+	height:200px;
+	top:250px;
+	left:400px;
+	
+}
